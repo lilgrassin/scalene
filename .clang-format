@@ -1,0 +1,6 @@
+BasedOnStyle: Google
+NamespaceIndentation: All
+AllowShortIfStatementsOnASingleLine: true
+AllowShortBlocksOnASingleLine: true
+PointerAlignment: Middle
+DerivePointerAlignment: false
