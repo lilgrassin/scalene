@@ -11,6 +11,7 @@
 #include "bufferbump.hpp"
 #include "cheapheap.hpp"
 #include "sampleheap.hpp"
+#include "splitheap.hpp"
 
 #include "repoman.hpp"
 
@@ -33,7 +34,7 @@ const auto FreeSamplingRate   = 1048589; // 16777289; // 1048589; // 1 * 1024 * 
 //const auto FreeSamplingRate   = 16777289; // 1048589; // 1 * 1024 * 1024;
 const auto RepoSize = 4096;
 
-typedef SampleHeap<MallocSamplingRate, FreeSamplingRate, RepoMan<RepoSize>> CustomHeapType;
+typedef SampleHeap<MallocSamplingRate, FreeSamplingRate, SplitHeap<RepoMan<RepoSize>>> CustomHeapType;
 
 class TheCustomHeap : public CustomHeapType {
   typedef CustomHeapType Super;
