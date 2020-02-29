@@ -15,11 +15,18 @@ UNAME_P := $(shell uname -p)
 ifeq ($(UNAME_S),Darwin)
   all: Heap-Layers $(MACOS_SRC)
 	$(MACOS_COMPILE)
+  
+  clean:
+	@rm -f *.dylib
+	@rm -rf *.dylib.dSYM
 endif
 
 ifeq ($(UNAME_S),Linux)
   all: Heap-Layers $(LINUX_SRC)
 	$(LINUX_COMPILE)
+  
+  clean:
+	@rm -f *.so
 endif
 
 Heap-Layers:
